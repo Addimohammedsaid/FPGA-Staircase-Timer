@@ -8,8 +8,8 @@ entity Timer is
 
 port(Clk,Rest,Stop: in std_logic :='0';
 	 Counter : inout integer;
-     Seconds : inout integer;
-     Minutes : inout integer
+     	 Seconds : inout integer;
+     	 Minutes : inout integer
 	);
     
 end Timer;
@@ -28,7 +28,7 @@ begin
                 
 	 elsif (rising_edge(Clk)) and (Stop='0') then 
 	
-		if (Counter  >= 49) then Counter  <= 0;
+		if (Counter  >= 49 999 999) then Counter  <= 0;--set clock frequency here
 		
 		if (Seconds >= 59) then Seconds <= 0; 
 
